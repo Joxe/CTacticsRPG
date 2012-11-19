@@ -76,6 +76,10 @@ float CameraHandler::getZoom() {
 	return m_camera -> getZoom();
 }
 
-V2<int> CameraHandler::getCoords() {
+V2<int> CameraHandler::getCoordsInt() {
 	return V2<int>((int)m_camera -> getCameraBox().X, (int)m_camera -> getCameraBox().Y);
+}
+
+V2<float> CameraHandler::getCoordsFloat() {
+	return V2<float>(m_camera -> getCameraBox().X , m_camera -> getCameraBox().Y);
 }
