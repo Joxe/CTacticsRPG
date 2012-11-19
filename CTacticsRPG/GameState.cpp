@@ -55,13 +55,13 @@ CameraHandler* GameState::getCameraHandler() {
 
 V2<float> GameState::getWorldMouseFloat() {
 	V2<float> l_return((float)m_game.getMouse() -> getCurrentCoords().X, (float)m_game.getMouse() -> getCurrentCoords().Y);
-	V2<float> l_camera((float)m_cameraHandler.getCoords().X, (float)m_cameraHandler.getCoords().Y);
+	V2<float> l_camera((float)m_cameraHandler.getCoordsFloat().X, (float)m_cameraHandler.getCoordsFloat().Y);
 	V2<float> l_resolution((float)m_game.getResolution().X, (float)m_game.getResolution().Y);
 
 	return (l_return / m_cameraHandler.getZoom()) + l_camera - ((l_resolution / 2) / m_cameraHandler.getZoom());
 }
 
 V2<int> GameState::getWorldMouseInt() {
-	return m_game.getMouse() -> getCurrentCoords() + m_cameraHandler.getCoords();
+	return m_game.getMouse() -> getCurrentCoords() + m_cameraHandler.getCoordsInt();
 	//TODO zoom
 }

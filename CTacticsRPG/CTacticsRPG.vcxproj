@@ -37,10 +37,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>E:\Visual Studio Projects\CTacticsRPG\CTacticsRPG\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\Joxe\CTacticsRPG\CTacticsRPG\CTacticsRPG\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LibraryPath>E:\Visual Studio Projects\CTacticsRPG\CTacticsRPG\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Users\Joxe\CTacticsRPG\CTacticsRPG\CTacticsRPG\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -68,6 +68,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraHandler.cpp" />
     <ClCompile Include="EventHandler.cpp" />
@@ -75,6 +76,7 @@
     <ClCompile Include="GameGUI.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="GraphicsFramework.cpp" />
+    <ClCompile Include="GUIElement.cpp" />
     <ClCompile Include="KeyboardHandler.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MouseHandler.cpp" />
@@ -94,6 +96,7 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="GraphicsFramework.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GUIElement.h" />
     <ClInclude Include="KeyboardHandler.h" />
     <ClInclude Include="MainFramework.h" />
     <ClInclude Include="GUI.h" />
@@ -103,6 +106,7 @@
     <ClInclude Include="PrimitivesFramework.h" />
     <ClInclude Include="ResourceHandler.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="Text.h" />
     <ClInclude Include="TexturedObject.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="TileMap.h" />

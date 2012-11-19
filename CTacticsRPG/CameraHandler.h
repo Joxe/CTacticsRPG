@@ -20,7 +20,8 @@ class CameraHandler {
 		void update();
 		void drawTexture(GLuint*, float, float, float, float);
 		float getZoom();
-		V2<int> getCoords();
+		V2<int> getCoordsInt();
+		V2<float> getCoordsFloat();
 };
 
 #endif
