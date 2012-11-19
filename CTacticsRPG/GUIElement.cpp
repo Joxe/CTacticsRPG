@@ -9,6 +9,7 @@ GUIElement::GUIElement(V2<float> a_position, std::string a_filepath, Game* a_gam
 
 void GUIElement::update() {
 	m_position = ((GameState*)m_game.getCurrentState()) -> getCameraHandler() -> getCoordsFloat() + m_screenPosition;
+	TexturedObject::update();
 }
 
 void GUIElement::setScreenPos(V2<float> a_position) {

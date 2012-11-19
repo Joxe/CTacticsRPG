@@ -35,7 +35,7 @@ void Tile::load() {
 	if (Y > 0) {
 		m_tileAbove = ((GameState*)m_game.getCurrentState()) -> getTileMap() -> getTile(X, Y - 1);
 	}
-	move(V2<float>(-(X * 64), -111));
+	move(V2<float>((float)-(X * 64), -111.0f));
 	m_hitbox = new JHexagon(m_position + V2<float>(0, 17), V2<float>((float)TILE_WIDTH, (float)TILE_HEIGHT));
 }
 

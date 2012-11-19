@@ -19,6 +19,7 @@ TexturedObject::TexturedObject(const TexturedObject &other) : GameObject(&other.
 	m_rotation = other.m_rotation;
 	m_scale = other.m_scale;
 	m_filepath = other.m_filepath;
+	m_dimensions = other.m_dimensions;
 	m_texture = m_game.getResourceHandler() -> loadImage(m_filepath);
 }
 
@@ -30,6 +31,7 @@ TexturedObject& TexturedObject::operator=(const TexturedObject &other) {
 		l_t.m_rotation = other.m_rotation;
 		l_t.m_scale = other.m_scale;
 		l_t.m_texture = other.m_texture;
+		l_t.m_dimensions = other.m_dimensions;
 		delete &other;
 	}
 	return *this;
@@ -37,20 +39,17 @@ TexturedObject& TexturedObject::operator=(const TexturedObject &other) {
 
 void TexturedObject::load() {
 	m_texture = m_game.getResourceHandler() -> loadImage(m_filepath);
-	//m_hitBox = JRectangle(GameObject::m_position.X, GameObject::m_position.Y, SPRITE_WIDTH, SPRITE_HEIGHT);
-	//TODO
+	m_dimensions = m_game.getResourceHandler() -> getSurfaceSize(m_filepath);
+	m_hitbox = &JRectangle(m_position.X, m_position.Y, (float)m_dimensions.X, (float)m_dimensions.Y);
 }
 
 void TexturedObject::update() {
-	//m_hitBox.setPosition(GameObject::m_position);
-	//GameObject::update();
-	//TODO
+	GameObject::update();
+	m_hitbox -> setPosition(GameObject::m_position);
 }
 
 void TexturedObject::draw() {
-	((GameState*)m_game.getCurrentState()) -> getCameraHandler() -> drawTexture(m_texture, m_position.X, m_position.Y, 256, 256); //TODO
-	//m_sprite -> draw();
-	//TODO
+	((GameState*)m_game.getCurrentState()) -> getCameraHandler() -> drawTexture(m_texture, m_position.X, m_position.Y, (float)m_dimensions.X, (float)m_dimensions.Y);
 }
 
 Color TexturedObject::getColor() const {

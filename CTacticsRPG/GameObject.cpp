@@ -16,18 +16,10 @@ GameObject::~GameObject() {
 
 }
 
-void GameObject::load() {
-
-}
-
 void GameObject::update() {
 	if (m_parent) {
 		m_position = m_parent -> getPosition() + m_parentOffset;
 	}
-}
-
-void GameObject::draw() {
-
 }
 
 TexturedObject* GameObject::getParent() {

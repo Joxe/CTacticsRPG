@@ -10,14 +10,19 @@ void Button::load() {
 }
 
 void Button::update() {
+	GUIElement::update();
 	if (m_buttonState != Disabled && m_hitbox -> contains(((GameState*)m_game.getCurrentState()) -> getWorldMouseInt())) {
 		m_buttonState = Hover;
-		if (m_game.getMouse() -> lmbPressed() && m_buttonState != Pressed) {
+		if (m_buttonState != Pressed && m_game.getMouse() -> lmbPressed()) {
 			m_buttonState = Pressed;
+			//playDownSound();
 		}
-		if (m_buttonState != Pressed && m_game.getMouse() -> lmbReleased()) {
+		if (m_buttonState == Pressed && m_game.getMouse() -> lmbReleased()) {
 			m_buttonState = Hover;
-			//TODO KLICK!
+			if (m_clickFunc) {
+				m_clickFunc(this);
+			}
+			//playUpSound();
 		}
 	} else {
 		m_buttonState = Normal;
@@ -26,6 +31,7 @@ void Button::update() {
 }
 
 void Button::draw() {
+	GUIElement::draw();
 	//TODO rita olika texturer beroende på state
 }
 
@@ -50,4 +56,8 @@ void Button::setTextOffset(V2<float> a_offset) {
 
 V2<float> Button::getTextOffset() {
 	return m_textOffset;
+}
+
+void Button::setClickFunc(clickFunc a_function) {
+	m_clickFunc = a_function;
 }

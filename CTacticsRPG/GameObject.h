@@ -18,7 +18,11 @@ class GameObject {
 		GameObject(V2<float> a_position, ::Game* a_game) : m_game(*a_game) { }
 		GameObject(GameObject*);
 		virtual void load() = 0;
-		virtual void update() = 0;
+		virtual void update() {
+			if (m_parent) {
+				m_position = m_parent -> getPosition() + m_parentOffset;
+			}
+		}
 		virtual void draw() = 0;
 		GameObject* getParent();
 		void setParent(GameObject*);

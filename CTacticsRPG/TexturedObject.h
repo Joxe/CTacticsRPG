@@ -14,6 +14,7 @@ class TexturedObject : public GameObject {
 		float m_layer;
 		float m_rotation;
 		float m_scale;
+		V2<int> m_dimensions;
 		std::string m_filepath;
 		GLuint* m_texture;
 		bool m_isInCamera;

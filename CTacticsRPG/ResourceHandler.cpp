@@ -43,6 +43,7 @@ GLuint* ResourceHandler::loadImage(std::string a_filepath) {
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 			m_imageMap[a_filepath].m_surface = l_texture;
+			m_imageMap[a_filepath].m_dimensions = V2<int>(l_loaded -> w, l_loaded -> h);
 			SDL_FreeSurface(l_loaded);
 			glBindTexture(GL_TEXTURE_2D, NULL);
 		}
@@ -60,4 +61,8 @@ void ResourceHandler::unloadImage(std::string a_name) {
 
 GLuint* ResourceHandler::getSurface(std::string a_name) {
 	return &m_imageMap[a_name].m_surface;
+}
+
+V2<int> ResourceHandler::getSurfaceSize(std::string a_name) {
+	return m_imageMap[a_name].m_dimensions;
 }
