@@ -37,10 +37,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\Joxe\CTacticsRPG\CTacticsRPG\CTacticsRPG\include;$(IncludePath)</IncludePath>
+    <IncludePath>E:\Visual Studio Projects\CTacticsRPG\CTacticsRPG\include;C:\Users\Joxe\CTacticsRPG\CTacticsRPG\CTacticsRPG\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LibraryPath>C:\Users\Joxe\CTacticsRPG\CTacticsRPG\CTacticsRPG\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>E:\Visual Studio Projects\CTacticsRPG\CTacticsRPG\lib;C:\Users\Joxe\CTacticsRPG\CTacticsRPG\CTacticsRPG\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
